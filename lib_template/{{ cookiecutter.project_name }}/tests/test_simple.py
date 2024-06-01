@@ -1,9 +1,5 @@
-from {{ cookiecutter.project_name }} import abc
-from {{ cookiecutter.project_name }}.simple import add_one
-
+from {{ cookiecutter.project_name }} import Stuff
 
 
 def test_add_one():
-    assert add_one(5) == 6
-
-
+    assert Stuff().abc() == 3

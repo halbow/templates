@@ -1,5 +1,3 @@
-def main():
-    """Entry point for the application script"""
-    print("Call your main application code here")
+from ._{{ cookiecutter.project_name }} import Stuff
 
-abc = 1
+__all__ = ["Stuff"]

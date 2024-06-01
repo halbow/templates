@@ -1,7 +1,9 @@
 import nox
 
+
 @nox.session
 def tests(session):
-    session.install('.')
-    session.install('pytest')
-    session.run('pytest')
+    session.install(".[dev]")
+    session.run("ruff", "format", "--diff")
+    session.run("mypy", "src")
+    session.run("pytest")
