@@ -3,7 +3,7 @@ from {{ cookiecutter.project_name }}.simple import add_one
 
 
 
-def test_add_one(self):
+def test_add_one():
     assert add_one(5) == 6
 
 

@@ -1,9 +1,11 @@
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
-build-backend = "hatchling.build"
+requires = ["setuptools"]  # REQUIRED if [build-system] table is used
+# The name of the Python object that frontends will use to perform the build:
+build-backend = "setuptools.build_meta"  # If not defined, then legacy behavior can happen.
+
 
 [project]
-name = "{{ cookiecutter.project_name }}"
+name = "samplerpoject"
 authors = [
   { name="{{ cookiecutter.author }}" },
 ]
