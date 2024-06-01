@@ -1,8 +1,6 @@
 [build-system]
-requires = ["setuptools"]  # REQUIRED if [build-system] table is used
-# The name of the Python object that frontends will use to perform the build:
-build-backend = "setuptools.build_meta"  # If not defined, then legacy behavior can happen.
-
+requires = ["hatchling>=1.24.2",]
+build-backend = "hatchling.build"
 
 [project]
 name = "samplerpoject"
@@ -46,8 +44,8 @@ dev = [
 #version = "{version}"
 #'''
 
-#[tool.hatch.build.targets.wheel]
-#packages = ["{{ cookiecutter.project_name }}"]
+[tool.hatch.build.targets.wheel]
+packages = ["src/{{ cookiecutter.project_name }}"]
 
 [tool.ruff]
 line-length = 120
