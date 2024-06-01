@@ -48,7 +48,7 @@ line-length = 120
 target-version = 'py3{{ cookiecutter.python_3_version}}'
 
 [tool.ruff.lint.isort]
-known-local-folder=["struuuctify", "tests"]
+known-local-folder=["{{ cookiecutter.project_name }}", "tests"]
 
 [tool.mypy]
 python_version = "3.{{ cookiecutter.python_3_version }}"

@@ -1,5 +1,5 @@
 {
-    "project_name": "toast_test",
+    "project_name": "toast",
     "author": "halbow",
     "description": "The {{ cookiecutter.project_name }} library, ...",
     "project_directory": "{{ cookiecutter.project_name }}",
