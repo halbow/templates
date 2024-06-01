@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.24.2",]
+requires = ["hatchling>=1.24.2"]
 build-backend = "hatchling.build"
 
 [project]
@@ -7,7 +7,6 @@ name = "samplerpoject"
 authors = [
   { name="{{ cookiecutter.author }}" },
 ]
-version = "0.0.1"
 requires-python = ">=3.{{ cookiecutter.python_3_version }}"
 readme = "README.md"
 classifiers = [
@@ -17,6 +16,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 
+dynamic = ["version"]
 
 [project.urls]
 "Homepage" = "https://github.com/{{ cookiecutter.author }}/{{ cookiecutter.project_name }}"
@@ -31,18 +31,9 @@ dev = [
     "ruff",
 ]
 
-[tool.setuptools.package-data]
-"{{ cookiecutter.project_name }}" = ["py.typed"]
+[tool.hatch.version]
+path = "src/{{ cookiecutter.project_name }}/_version.py"
 
-#[tool.hatch.version]
-#source = "vcs"
-#raw-options = { local_scheme = "no-local-version" }
-#
-#[tool.hatch.build.hooks.vcs]
-#version-file = "src/{{ cookiecutter.project_name }}/_version.py"
-#template = '''
-#version = "{version}"
-#'''
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/{{ cookiecutter.project_name }}"]
