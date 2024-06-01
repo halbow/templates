@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{ cookiecutter.project_name }}"
+authors = [
+  { name="{{ cookiecutter.author }}" },
+]
+version = "0.0.1"
+requires-python = ">=3.{{ cookiecutter.python_3_version }}"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/{{ cookiecutter.author }}/{{ cookiecutter.project_name }}"
+"Bug Tracker" = "https://github.com/{{ cookiecutter.author }}/{{ cookiecutter.project_name }}/issues"
+
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
+
+[tool.hatch.version]
+source = "vcs"
+raw-options = { local_scheme = "no-local-version" }
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/{{ cookiecutter.project_name }}/_version.py"
+template = '''
+version = "{version}"
+'''
+
+[tool.hatch.build.targets.wheel]
+packages = ["{{ cookiecutter.project_name }}"]
+
+[tool.ruff]
+line-length = 120
+target-version = 'py3{{ cookiecutter.python_3_version}}'
+
+[tool.ruff.lint.isort]
+known-local-folder=["struuuctify", "tests"]
+
+[tool.mypy]
+python_version = "3.{{ cookiecutter.python_3_version }}"
+strict = true
+show_error_codes = true
+
+

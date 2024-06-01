@@ -1,0 +1,18 @@
+# Tests
+test *ARG:
+    docker compose run \
+      "{{ cookiecutter.project_name }}" pytest tests \
+      --cov=src --cov-fail-under=90 \
+      {{ "{{" }} ARG {{ "}}" }}
+
+# Lint
+ruff-check:
+    docker compose run "{{ cookiecutter.project_name }}" ruff format --diff
+    docker compose run "{{ cookiecutter.project_name }}" ruff check
+
+ruff:
+    docker compose run "{{ cookiecutter.project_name }}" ruff format
+    docker compose run "{{ cookiecutter.project_name }}" ruff check --fix
+
+mypy:
+    docker compose run "{{ cookiecutter.project_name }}" mypy src tests
