@@ -3,7 +3,5 @@
     "author": "halbow",
     "description": "The {{ cookiecutter.project_name }} library, ...",
     "project_directory": "{{ cookiecutter.project_name }}",
-    "python_3_version": "12",
-    "__camel_case_project_name": "{{ cookiecutter.project_name | replace('_', ' ') | title | replace(' ', '')}}",
-    "__app_exception_name": "{{ cookiecutter.__camel_case_project_name + 'Exception' }}"
+    "python_3_version": "12"
 }
