@@ -3,7 +3,7 @@ requires = ["hatchling>=1.24.2"]
 build-backend = "hatchling.build"
 
 [project]
-name = "samplerpoject"
+name = "{{ cookiecutter.project_name }}"
 authors = [
   { name="{{ cookiecutter.author }}" },
 ]
